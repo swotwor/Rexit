@@ -1,0 +1,19 @@
+.dropdownMenu {
+    width: 572px;
+    border-radius: 24px;
+    padding: 32px;
+    position: absolute;
+    top: 44px;
+    right: 0;
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.2);
+    background-color: white;
+
+    &_cartListCrackers {
+        margin-bottom: 24px;
+    }
+
+    &_checkout {
+        display: flex;
+        justify-content: end;
+    }
+}

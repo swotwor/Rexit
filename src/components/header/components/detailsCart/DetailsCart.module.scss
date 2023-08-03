@@ -1,0 +1,18 @@
+.cartList {
+    position: relative;
+    
+    &_content {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    &_title {
+        color: white;
+    }
+
+    &_icon {
+        padding: 9px 7px;
+        margin-left: 4px;
+    }
+}

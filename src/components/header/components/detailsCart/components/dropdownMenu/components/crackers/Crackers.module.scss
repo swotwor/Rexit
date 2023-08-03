@@ -1,0 +1,33 @@
+.crackers {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(77, 77, 77, 0.2);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    
+    &_proportions {
+        width: 200px;
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            width: 32px;
+            color: rgba(255, 66, 0, 1);
+            text-align: center;
+        }
+    }
+
+    &_weight,
+    &_cost {
+        width: 80px;
+        text-align: right;
+    }
+
+    &_remove {
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,27 @@
+.checkout {
+    display: flex;
+    align-items: center;
+
+    &_titalCost {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        margin-right: 16px;
+
+        span {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+    }
+
+    &_button {
+        padding: 11px 24px;
+        color: white;
+        background: rgba(255, 66, 0, 1);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        border-radius: 90px;
+    }
+}

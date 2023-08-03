@@ -1,0 +1,19 @@
+.cartItemCount {
+    position: relative;
+    margin-right: 24px;
+    color: white;
+}
+
+.cartCount {
+    width: 16px;
+    height: 16px;
+    top: -8px;
+    right: -8px;
+    position: absolute;
+    text-align: center;
+    background-color: red;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 16px;
+}
