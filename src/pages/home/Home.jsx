@@ -1,11 +1,12 @@
 import style from './Home.module.scss';
-import NavigationMenu from './components/navigationMenu/NavigationMenu';
+import BottomContent from './components/bottomContent/BottomContent';
+import TopContent from './components/topContent/TopContent';
 
 const Home = () => {
     return (
         <div className={style.home}>
-            <NavigationMenu />
-            
+            <TopContent />
+            <BottomContent />
         </div>
     );
 };

@@ -11,29 +11,34 @@ const DetailsCart = () => {
     const dropdownRef = useRef(null);
 
     const handleClick = () => {
-        setIsOpen(prev => !prev);
+        setIsOpen((prev) => !prev);
     };
-    const handleClickOutside  = () => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-            setIsOpen(prev => !prev);
-          }
+
+    const handleClickOutside = (event) => {
+        if (
+            dropdownRef.current &&
+            !dropdownRef.current.contains(event.target)
+        ) {
+            setIsOpen(false);
+        }
     };
 
     useEffect(() => {
         document.addEventListener('click', handleClickOutside);
-    
+
         return () => {
-          document.removeEventListener('click', handleClickOutside);
+            document.removeEventListener('click', handleClickOutside);
         };
-      }, []);
+    }, []);
 
     return (
         <div className={style.cartList} ref={dropdownRef}>
             <div className={style.cartList_content} onClick={handleClick}>
                 <p className={style.cartList_title}>DETAILS</p>
-                <img className={style.cartList_icon} src={arrowImage} alt="arrow"/>
+                <img className={style.cartList_icon} src={arrowImage} alt="arrow" />
             </div>
-            {isOpen 
+            {
+                isOpen
                 ? <DropdownMenu />
                 : null
             }
