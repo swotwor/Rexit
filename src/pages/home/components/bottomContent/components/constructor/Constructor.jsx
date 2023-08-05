@@ -5,13 +5,29 @@ import Wheat from './components/wheat/Wheat';
 import Sesame from './components/sesame/Sesame';
 import { useEffect, useState } from 'react';
 import Footer from './components/footer/Footer';
+import { useDispatch, useSelector } from 'react-redux';
+import { amountCostCrackers } from '../../../../../../logic/logic';
 
 const Constructor = () => {
+    const dispatch = useDispatch();
+    const totalCost = useSelector(state => state.buyList);
     const [componentPeas, setComponentPeas] = useState(30);
     const [componentSesame, setComponentSesame] = useState(30);
     const [componentWheat, setComponentWheat] = useState(30);
     const [componentCorn, setComponentCorn] = useState(10);
     const [choicePack, setChoicePack] = useState('CHOOSE YOUR PACK');
+
+    const addCracker = () => {
+        dispatch({type: 'ADD_CRACKER', payload: {
+            id: totalCost + 1,
+            peas: componentPeas,
+            sesame: componentSesame,
+            wheat: componentWheat,
+            corn: componentCorn,
+            weight: '0.66',
+            cost: '33.00',
+        }})
+    }
 
     useEffect(() => {
         const countWithoutCorn = componentPeas + componentSesame + componentWheat;
@@ -57,7 +73,7 @@ const Constructor = () => {
                     CRACKER CONSTRUCTOR
                 </p>
                 <p className={style.constructor_headerCurrentValue}>
-                    Current Value: 143€
+                    Current Value: {amountCostCrackers(totalCost)}€
                 </p>
             </div>
             <div className={style.constructor_crackerComponents}>
@@ -66,7 +82,7 @@ const Constructor = () => {
                <Wheat value={componentWheat} handleChange={handleChange}/>
                <Corn value={componentCorn} handleChange={handleChange}/>
             </div>
-            <Footer setChoicePack={setChoicePack} choicePack={choicePack}/>
+            <Footer setChoicePack={setChoicePack} choicePack={choicePack} addCracker={addCracker}/>
         </div>
     );
 };

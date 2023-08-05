@@ -1,13 +1,12 @@
 import style from './DetailsCart.module.scss';
 import arrow_up from '../../../../assets/icons/arrow_up.svg';
-import arrow_down from '../../../../assets/icons/arrow_up.svg';
-import { useRef, useState } from 'react';
+import arrow_down from '../../../../assets/icons/arrow_down.svg';
 import DropdownMenu from './components/dropdownMenu/DropdownMenu';
 import { useEffect } from 'react';
+import { useRef, useState } from 'react';
 
 const DetailsCart = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [arrowImage, setArrowImage] = useState(arrow_up);
     const dropdownRef = useRef(null);
 
     const handleClick = () => {
@@ -35,7 +34,10 @@ const DetailsCart = () => {
         <div className={style.cartList} ref={dropdownRef}>
             <div className={style.cartList_content} onClick={handleClick}>
                 <p className={style.cartList_title}>DETAILS</p>
-                <img className={style.cartList_icon} src={arrowImage} alt="arrow" />
+                {isOpen
+                    ? <img className={style.cartList_icon} src={arrow_up} alt="arrow" />
+                    : <img className={style.cartList_icon} src={arrow_down} alt="arrow" />
+                }
             </div>
             {
                 isOpen

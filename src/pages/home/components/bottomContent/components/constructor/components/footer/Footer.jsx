@@ -6,7 +6,7 @@ import arrow_down from '../../../../../../../../assets/icons/home/bottomContent/
 import arrow_up from '../../../../../../../../assets/icons/home/bottomContent/chevron-up.svg';
 import normal_btn from '../../../../../../../../assets/icons/home/bottomContent/normal_btn.png';
 
-const Footer = ({ setChoicePack, choicePack }) => {
+const Footer = ({ setChoicePack, choicePack, addCracker }) => {
     const [isOpen, setIsOpen] = useState(false);
     
     const handleClick = () => {
@@ -30,7 +30,8 @@ const Footer = ({ setChoicePack, choicePack }) => {
                 }
             </div>
             <div className={style.footer_addToCart}>
-                <img src={normal_btn} alt="Button" />
+                <img src={normal_btn} alt="Button" onClick={() => addCracker()}/>
+                {/* <button>ADD TO CART</button> */}
             </div>
         </div>
     );
