@@ -1,6 +1,7 @@
 .bottomContent {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     overflow: hidden;
     background-image: url('../../../../assets/backgrounds/home/bottom_block.png');
     background-position: center;
