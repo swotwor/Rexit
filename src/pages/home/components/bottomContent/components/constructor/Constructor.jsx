@@ -3,10 +3,10 @@ import Peas from './components/peas/Peas';
 import Corn from './components/corn/Corn';
 import Wheat from './components/wheat/Wheat';
 import Sesame from './components/sesame/Sesame';
-import { useEffect, useState } from 'react';
-import Footer from './components/footer/Footer';
-import { useDispatch, useSelector } from 'react-redux';
 import { amountCostCrackers } from '../../../../../../logic/logic';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import BottomContentFooter from './components/bottomContentFooter/BottomContentFooter';
 
 const Constructor = () => {
     const dispatch = useDispatch();
@@ -82,7 +82,7 @@ const Constructor = () => {
                <Wheat value={componentWheat} handleChange={handleChange}/>
                <Corn value={componentCorn} handleChange={handleChange}/>
             </div>
-            <Footer setChoicePack={setChoicePack} choicePack={choicePack} addCracker={addCracker}/>
+            <BottomContentFooter setChoicePack={setChoicePack} choicePack={choicePack} addCracker={addCracker}/>
         </div>
     );
 };
